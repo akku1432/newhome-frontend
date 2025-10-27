@@ -57,7 +57,7 @@ const Contact = () => {
       if (error.message === 'Network Error') {
         errorMessage = 'Cannot connect to server. Please check if backend is running.';
       } else if (error.code === 'ECONNABORTED' || error.message.includes('timeout')) {
-        errorMessage = 'Request timed out. Backend might be starting up. Please wait 30 seconds and try again.';
+        errorMessage = 'Server is waking up (this takes 30-60 seconds on first request). Please try submitting again in a moment.';
       } else if (error.response?.status === 404) {
         errorMessage = 'Service not found. API endpoint may be incorrect.';
       } else if (error.response?.status === 500) {
