@@ -60,7 +60,7 @@ const Navbar = () => {
                 <img
                   src="/logo-horizontal.png"
                   alt="NUHome Interiors"
-                  className="h-12 w-auto object-contain drop-shadow-lg"
+                  className="h-14 w-auto object-contain"
                   onError={(e) => {
                     // Fallback if logo not found
                     e.target.style.display = 'none';
