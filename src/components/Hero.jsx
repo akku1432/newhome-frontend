@@ -54,11 +54,11 @@ const Hero = () => {
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed"
+            className="text-xl md:text-2xl text-gray-300 mb-8 max-w-5xl mx-auto leading-relaxed"
           >
-            Complete home interior solutions including modular kitchens, furniture, lighting,
-            <br className="hidden md:block" />
-            false ceilings, and more. Your dream home awaits!
+            Complete home interior solutions including modular kitchens, furniture, lighting, false ceilings, and more.
+            <br />
+            Your dream home awaits!
           </motion.p>
 
           {/* CTA Button */}
