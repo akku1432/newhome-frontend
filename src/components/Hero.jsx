@@ -34,19 +34,17 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 py-20 relative z-10">
+      <div className="container mx-auto px-4 py-16 sm:py-20 relative z-10">
         <div className="text-center">
           {/* Main Heading */}
           <motion.h1
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight px-4"
-            style={{ lineHeight: '1.3' }}
+            className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-3 sm:mb-6 leading-tight px-4"
+            style={{ lineHeight: '1.2' }}
           >
-            Transforming Spaces into
-            <br />
-            <span className="text-orange">Dream Homes</span>
+            Transforming Spaces into <span className="text-orange">Dream Homes</span>
           </motion.h1>
 
           {/* Subheading */}
@@ -54,11 +52,9 @@ const Hero = () => {
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-8 max-w-6xl mx-auto leading-relaxed px-4"
+            className="text-xs sm:text-base md:text-lg lg:text-xl text-gray-300 mb-6 sm:mb-8 max-w-6xl mx-auto leading-snug px-4 sm:px-6"
           >
-            Complete home interior solutions including modular kitchens, furniture, lighting,
-            <br className="hidden lg:block" />
-            false ceilings, and more.
+            Complete home interior solutions including modular kitchens, furniture, lighting, false ceilings, and more.
           </motion.p>
 
           {/* CTA Button */}
@@ -66,11 +62,11 @@ const Hero = () => {
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="px-4"
+            className="px-4 mt-2"
           >
             <button
               onClick={scrollToContact}
-              className="btn-primary text-base sm:text-lg px-8 sm:px-10 py-3 sm:py-4"
+              className="btn-primary text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-10 py-3 sm:py-4 w-auto"
             >
               Get Free Consultation
             </button>
