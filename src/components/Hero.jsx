@@ -41,7 +41,7 @@ const Hero = () => {
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight md:leading-tight lg:leading-tight"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight px-4"
             style={{ lineHeight: '1.3' }}
           >
             Transforming Spaces into
@@ -54,11 +54,11 @@ const Hero = () => {
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-lg md:text-xl text-gray-300 mb-8 max-w-5xl mx-auto leading-relaxed"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-8 max-w-6xl mx-auto leading-relaxed px-4"
           >
-            Complete home interior solutions including modular kitchens, furniture, lighting, false ceilings, and more.
-            <br />
-            Your dream home awaits!
+            Complete home interior solutions including modular kitchens, furniture, lighting,
+            <br className="hidden lg:block" />
+            false ceilings, and more.
           </motion.p>
 
           {/* CTA Button */}
@@ -66,10 +66,11 @@ const Hero = () => {
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.6 }}
+            className="px-4"
           >
             <button
               onClick={scrollToContact}
-              className="btn-primary text-lg px-10 py-4"
+              className="btn-primary text-base sm:text-lg px-8 sm:px-10 py-3 sm:py-4"
             >
               Get Free Consultation
             </button>
