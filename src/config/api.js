@@ -1,0 +1,51 @@
+// API Configuration
+import axios from 'axios';
+
+// Base API URL - change this in production
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+
+// Create axios instance with default config
+const api = axios.create({
+  baseURL: API_BASE_URL,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  timeout: 10000, // 10 seconds
+});
+
+// API endpoints
+export const contactAPI = {
+  // Submit contact form
+  submit: (data) => api.post('/contact', data),
+  
+  // Get all contacts (admin)
+  getAll: () => api.get('/contact'),
+};
+
+export const testimonialAPI = {
+  // Get all testimonials
+  getAll: () => api.get('/testimonials'),
+  
+  // Create new testimonial (admin)
+  create: (data) => api.post('/testimonials', data),
+};
+
+export const portfolioAPI = {
+  // Get all portfolio items
+  getAll: (params) => api.get('/portfolio', { params }),
+  
+  // Get portfolio item by ID
+  getById: (id) => api.get(`/portfolio/${id}`),
+  
+  // Create new portfolio item (admin)
+  create: (data) => api.post('/portfolio', data),
+  
+  // Update portfolio item (admin)
+  update: (id, data) => api.put(`/portfolio/${id}`, data),
+  
+  // Delete portfolio item (admin)
+  delete: (id) => api.delete(`/portfolio/${id}`),
+};
+
+export default api;
+

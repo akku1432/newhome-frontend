@@ -1,0 +1,84 @@
+=====================================
+LOGO PLACEMENT INSTRUCTIONS
+=====================================
+
+📍 WHERE TO PLACE YOUR LOGO:
+
+Place your company logo file in this folder (newhome-frontend/public/)
+
+
+📝 FILE NAME:
+
+Name your logo file: logo.png
+
+Supported formats:
+- PNG (recommended - supports transparency)
+- JPG/JPEG
+- SVG
+
+
+📐 RECOMMENDED SPECIFICATIONS:
+
+Size: 512x512 pixels
+Format: PNG with transparent background
+Max file size: 500KB
+Aspect ratio: Square or horizontal (1:1 or 16:9)
+
+
+🎨 DESIGN TIPS:
+
+✓ Use high resolution for clarity
+✓ Ensure logo is visible on both light and dark backgrounds
+✓ Include your brand colors (Navy Blue #030F30, Orange #FD8802)
+✓ Keep it simple and professional
+✓ Test on mobile devices
+
+
+📂 FILE STRUCTURE:
+
+newhome-frontend/
+└── public/
+    ├── logo.png          ← Place your logo here
+    ├── index.html
+    ├── manifest.json
+    └── LOGO_INSTRUCTIONS.txt (this file)
+
+
+🔄 ALTERNATIVE FILE NAMES:
+
+If you want to use a different filename (e.g., company-logo.png):
+
+1. Place your logo in this folder with your preferred name
+2. Open: newhome-frontend/src/components/Hero.jsx
+3. Find line with: src="/logo.png"
+4. Replace "logo.png" with your filename
+
+
+✅ VERIFY IT WORKS:
+
+1. Place logo in public folder
+2. Start frontend: npm start
+3. Check the Hero section (top of page)
+4. Logo should appear in a white rounded square
+
+
+❌ TROUBLESHOOTING:
+
+Logo not showing?
+- Check filename is exactly "logo.png" (case-sensitive)
+- Verify file is in public folder, not src folder
+- Clear browser cache (Ctrl + Shift + R)
+- Check file permissions
+- Try JPG format if PNG doesn't work
+
+
+💡 NO LOGO YET?
+
+The website will show a placeholder "NH" logo until you add your actual logo file.
+Everything else will work perfectly!
+
+
+=====================================
+Questions? Check the main README.md
+=====================================
+

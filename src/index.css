@@ -1,0 +1,202 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FD8802;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e67802;
+}
+
+/* Utility Classes */
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .heading-primary {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold;
+  }
+
+  .heading-secondary {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold;
+  }
+
+  .text-accent {
+    @apply text-orange;
+  }
+
+  .btn-primary {
+    @apply bg-orange text-white px-8 py-3 rounded-lg font-semibold 
+           hover:bg-orange-600 transition-all duration-300 
+           hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .card {
+    @apply bg-white p-8 rounded-xl shadow-lg 
+           hover:shadow-2xl transition-shadow duration-300;
+  }
+
+  .gradient-navy {
+    @apply bg-gradient-to-br from-navy via-navy to-[#051840];
+  }
+}
+
+/* Custom Color Classes */
+.text-navy {
+  color: #030F30;
+}
+
+.bg-navy {
+  background-color: #030F30;
+}
+
+.text-orange {
+  color: #FD8802;
+}
+
+.bg-orange {
+  background-color: #FD8802;
+}
+
+.hover\:bg-orange-600:hover {
+  background-color: #e67802;
+}
+
+.border-orange {
+  border-color: #FD8802;
+}
+
+/* Line Clamp Utility */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.5s ease-out;
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Responsive Utilities */
+@media (max-width: 640px) {
+  .section-padding {
+    @apply py-12;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* Accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Focus Visible (Better Accessibility) */
+*:focus-visible {
+  outline: 2px solid #FD8802;
+  outline-offset: 2px;
+}
+
+/* Disable outline for mouse users */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
