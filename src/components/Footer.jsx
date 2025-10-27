@@ -1,6 +1,6 @@
 // Footer Component
 import React from 'react';
-import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin, FaYoutube } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin, FaYoutube, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -40,9 +40,10 @@ const Footer = () => {
               Transforming spaces into dream homes with innovative design solutions
               and exceptional craftsmanship.
             </p>
-            <p className="text-gray-300 text-sm">
-              📍 Hyderabad | Vizag | Bangalore
-            </p>
+            <div className="flex items-center text-gray-300 text-sm">
+              <FaMapMarkerAlt className="text-orange mr-2 flex-shrink-0" />
+              <span>Hyderabad | Vizag | Bangalore</span>
+            </div>
           </div>
 
           {/* Quick Links */}
@@ -65,13 +66,15 @@ const Footer = () => {
           {/* Contact & Social */}
           <div>
             <h3 className="text-xl font-bold mb-4">Connect With Us</h3>
-            <div className="space-y-2 mb-4">
-              <p className="text-gray-300">
-                📞 <a href="tel:+916300724553" className="hover:text-orange transition-colors">+91 6300724553</a>
-              </p>
-              <p className="text-gray-300">
-                ✉️ <a href="mailto:nuhomeinteriors9@gmail.com" className="hover:text-orange transition-colors">nuhomeinteriors9@gmail.com</a>
-              </p>
+            <div className="space-y-3 mb-6">
+              <div className="flex items-center text-gray-300">
+                <FaPhoneAlt className="text-orange mr-3 flex-shrink-0" />
+                <a href="tel:+916300724553" className="hover:text-orange transition-colors">+91 6300724553</a>
+              </div>
+              <div className="flex items-center text-gray-300">
+                <FaEnvelope className="text-orange mr-3 flex-shrink-0" />
+                <a href="mailto:nuhomeinteriors9@gmail.com" className="hover:text-orange transition-colors">nuhomeinteriors9@gmail.com</a>
+              </div>
             </div>
             
             {/* Social Media Icons */}
