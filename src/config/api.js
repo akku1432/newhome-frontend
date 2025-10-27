@@ -4,13 +4,16 @@ import axios from 'axios';
 // Base API URL - Uses environment variable or defaults to Render backend
 const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://newhome-backend.onrender.com/api';
 
+// Log the API URL being used
+console.log('🌐 API Base URL:', API_BASE_URL);
+
 // Create axios instance with default config
 const api = axios.create({
   baseURL: API_BASE_URL,
   headers: {
     'Content-Type': 'application/json',
   },
-  timeout: 10000, // 10 seconds
+  timeout: 30000, // 30 seconds (increased for Render cold start)
 });
 
 // API endpoints

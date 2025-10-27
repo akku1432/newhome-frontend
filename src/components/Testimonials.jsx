@@ -12,12 +12,19 @@ const Testimonials = () => {
   useEffect(() => {
     const fetchTestimonials = async () => {
       try {
+        console.log('🔍 Fetching testimonials from API...');
         const response = await testimonialAPI.getAll();
+        console.log('✅ API Response:', response.data);
+        
         if (response.data.success) {
           setTestimonials(response.data.data);
+          console.log('✅ Loaded testimonials:', response.data.data.length);
+        } else {
+          console.warn('⚠️ API returned success=false');
         }
       } catch (error) {
-        console.error('Error fetching testimonials:', error);
+        console.error('❌ Error fetching testimonials:', error);
+        console.error('❌ Error details:', error.response?.data || error.message);
       } finally {
         setLoading(false);
       }

@@ -42,7 +42,9 @@ const Navbar = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-navy shadow-lg' : 'bg-transparent'
+        scrolled 
+          ? 'bg-white shadow-lg' 
+          : 'bg-white/10 backdrop-blur-md'
       }`}
     >
       <div className="container mx-auto px-4">
@@ -53,12 +55,12 @@ const Navbar = () => {
               whileHover={{ scale: 1.05 }}
               className="flex items-center"
             >
-              {/* Horizontal Logo */}
-              <div className="flex items-center bg-white px-4 py-2 rounded-lg">
+              {/* Horizontal Logo - No Background */}
+              <div className="flex items-center">
                 <img
                   src="/logo-horizontal.png"
                   alt="NUHome Interiors"
-                  className="h-12 w-auto object-contain"
+                  className="h-12 w-auto object-contain drop-shadow-lg"
                   onError={(e) => {
                     // Fallback if logo not found
                     e.target.style.display = 'none';
@@ -66,11 +68,12 @@ const Navbar = () => {
                   }}
                 />
               </div>
+              {/* Text Logo Fallback */}
               <div className="items-center space-x-2 hidden">
-                <div className="w-10 h-10 bg-orange rounded-lg flex items-center justify-center">
+                <div className="w-10 h-10 bg-orange rounded-lg flex items-center justify-center shadow-lg">
                   <span className="text-white font-bold text-xl">N</span>
                 </div>
-                <span className="text-white font-bold text-xl">
+                <span className={`font-bold text-xl ${scrolled ? 'text-navy' : 'text-white drop-shadow-lg'}`}>
                   NUHome <span className="text-orange">Interiors</span>
                 </span>
               </div>
@@ -84,7 +87,9 @@ const Navbar = () => {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => scrollToSection(e, link.href)}
-                className="text-white hover:text-orange transition-colors duration-300 font-medium"
+                className={`hover:text-orange transition-colors duration-300 font-medium ${
+                  scrolled ? 'text-navy' : 'text-white drop-shadow-lg'
+                }`}
               >
                 {link.name}
               </a>
@@ -92,7 +97,7 @@ const Navbar = () => {
             <a
               href="#contact"
               onClick={(e) => scrollToSection(e, '#contact')}
-              className="btn-primary"
+              className="btn-primary shadow-lg"
             >
               Get Quote
             </a>
@@ -101,7 +106,7 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-white text-2xl"
+            className={`md:hidden text-2xl ${scrolled ? 'text-navy' : 'text-white'}`}
           >
             {isOpen ? <FaTimes /> : <FaBars />}
           </button>
@@ -113,14 +118,16 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden pb-4"
+            className={`md:hidden pb-4 ${scrolled ? 'bg-white' : 'bg-navy/95 backdrop-blur-md rounded-lg mt-2 px-4'}`}
           >
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={(e) => scrollToSection(e, link.href)}
-                className="block text-white hover:text-orange transition-colors duration-300 py-2"
+                className={`block hover:text-orange transition-colors duration-300 py-2 ${
+                  scrolled ? 'text-navy' : 'text-white'
+                }`}
               >
                 {link.name}
               </a>

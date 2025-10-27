@@ -14,10 +14,21 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center bg-navy overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: 'url(https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1974&auto=format&fit=crop)',
+        }}
+      >
+        {/* Dark Overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/85 to-navy/75"></div>
+      </div>
+
+      {/* Decorative Pattern Overlay */}
+      <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-0 w-96 h-96 bg-orange rounded-full filter blur-3xl"></div>
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-orange rounded-full filter blur-3xl"></div>
       </div>
