@@ -48,18 +48,24 @@ const Contact = () => {
       }
     } catch (error) {
       console.error('❌ Form submission error:', error);
+      console.error('❌ Error message:', error.message);
       console.error('❌ Error response:', error.response);
+      console.error('❌ Full error object:', JSON.stringify(error, null, 2));
       
       let errorMessage = 'Failed to send message. Please try again.';
       
       if (error.message === 'Network Error') {
-        errorMessage = 'Cannot connect to server. Please check your internet connection.';
+        errorMessage = 'Cannot connect to server. Please check if backend is running.';
+      } else if (error.code === 'ECONNABORTED' || error.message.includes('timeout')) {
+        errorMessage = 'Request timed out. Backend might be starting up. Please wait 30 seconds and try again.';
       } else if (error.response?.status === 404) {
-        errorMessage = 'Service not found. Please contact support.';
+        errorMessage = 'Service not found. API endpoint may be incorrect.';
       } else if (error.response?.status === 500) {
         errorMessage = 'Server error. Please try again later.';
       } else if (error.response?.data?.message) {
         errorMessage = error.response.data.message;
+      } else if (error.message) {
+        errorMessage = `Error: ${error.message}`;
       }
       
       setStatus({
