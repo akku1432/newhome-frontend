@@ -44,7 +44,7 @@ const Navbar = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled 
           ? 'bg-white shadow-lg' 
-          : 'bg-white/10 backdrop-blur-md'
+          : 'bg-white shadow-md'
       }`}
     >
       <div className="container mx-auto px-4">
@@ -73,7 +73,7 @@ const Navbar = () => {
                 <div className="w-10 h-10 bg-orange rounded-lg flex items-center justify-center shadow-lg">
                   <span className="text-white font-bold text-xl">N</span>
                 </div>
-                <span className={`font-bold text-xl ${scrolled ? 'text-navy' : 'text-white drop-shadow-lg'}`}>
+                <span className="font-bold text-xl text-navy">
                   NUHome <span className="text-orange">Interiors</span>
                 </span>
               </div>
@@ -87,9 +87,7 @@ const Navbar = () => {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => scrollToSection(e, link.href)}
-                className={`hover:text-orange transition-colors duration-300 font-medium ${
-                  scrolled ? 'text-navy' : 'text-white drop-shadow-lg'
-                }`}
+                className="text-navy hover:text-orange transition-colors duration-300 font-medium"
               >
                 {link.name}
               </a>
@@ -106,7 +104,7 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`md:hidden text-2xl ${scrolled ? 'text-navy' : 'text-white'}`}
+            className="md:hidden text-2xl text-navy"
           >
             {isOpen ? <FaTimes /> : <FaBars />}
           </button>
@@ -118,16 +116,14 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className={`md:hidden pb-4 ${scrolled ? 'bg-white' : 'bg-navy/95 backdrop-blur-md rounded-lg mt-2 px-4'}`}
+            className="md:hidden pb-4 bg-white"
           >
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={(e) => scrollToSection(e, link.href)}
-                className={`block hover:text-orange transition-colors duration-300 py-2 ${
-                  scrolled ? 'text-navy' : 'text-white'
-                }`}
+                className="block text-navy hover:text-orange transition-colors duration-300 py-2"
               >
                 {link.name}
               </a>
