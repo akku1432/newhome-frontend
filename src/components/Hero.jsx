@@ -44,7 +44,8 @@ const Hero = () => {
             className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight md:leading-tight lg:leading-tight"
             style={{ lineHeight: '1.3' }}
           >
-            Transforming Spaces into{' '}
+            Transforming Spaces into
+            <br />
             <span className="text-orange">Dream Homes</span>
           </motion.h1>
 

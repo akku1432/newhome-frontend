@@ -29,12 +29,14 @@ const Contact = () => {
     setStatus({ type: '', message: '' });
 
     try {
+      console.log('📤 Submitting form data:', formData);
       const response = await contactAPI.submit(formData);
+      console.log('✅ Response received:', response.data);
       
       if (response.data.success) {
         setStatus({
           type: 'success',
-          message: response.data.message,
+          message: response.data.message || 'Thank you for contacting us! We will get back to you soon.',
         });
         // Reset form
         setFormData({
@@ -45,9 +47,24 @@ const Contact = () => {
         });
       }
     } catch (error) {
+      console.error('❌ Form submission error:', error);
+      console.error('❌ Error response:', error.response);
+      
+      let errorMessage = 'Failed to send message. Please try again.';
+      
+      if (error.message === 'Network Error') {
+        errorMessage = 'Cannot connect to server. Please check your internet connection.';
+      } else if (error.response?.status === 404) {
+        errorMessage = 'Service not found. Please contact support.';
+      } else if (error.response?.status === 500) {
+        errorMessage = 'Server error. Please try again later.';
+      } else if (error.response?.data?.message) {
+        errorMessage = error.response.data.message;
+      }
+      
       setStatus({
         type: 'error',
-        message: error.response?.data?.message || 'Failed to send message. Please try again.',
+        message: errorMessage,
       });
     } finally {
       setLoading(false);
