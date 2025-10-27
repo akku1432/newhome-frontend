@@ -52,6 +52,7 @@ const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="text-center md:text-left"
           >
             <h3 className="text-3xl font-bold text-navy mb-6">
               Our Mission & Vision
