@@ -14,7 +14,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-[600px] md:min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Background Image */}
       <div 
@@ -34,14 +34,14 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 py-16 sm:py-20 relative z-10">
-        <div className="text-center">
+      <div className="container mx-auto px-4 py-12 sm:py-16 md:py-20 relative z-10">
+        <div className="text-center max-w-full overflow-hidden">
           {/* Main Heading */}
           <motion.h1
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-3 sm:mb-6 leading-tight px-4"
+            className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-3 sm:mb-6 leading-tight px-2 sm:px-4 max-w-full"
             style={{ lineHeight: '1.2' }}
           >
             Transforming Spaces into <span className="text-orange">Dream Homes</span>
@@ -52,7 +52,7 @@ const Hero = () => {
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-xs sm:text-base md:text-lg lg:text-xl text-gray-300 mb-6 sm:mb-8 max-w-6xl mx-auto leading-snug px-4 sm:px-6"
+            className="text-xs sm:text-base md:text-lg lg:text-xl text-gray-300 mb-5 sm:mb-8 max-w-6xl mx-auto leading-snug px-2 sm:px-6"
           >
             Complete home interior solutions including modular kitchens, furniture, lighting, false ceilings, and more.
           </motion.p>
@@ -62,11 +62,11 @@ const Hero = () => {
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="px-4 mt-2"
+            className="px-2 sm:px-4"
           >
             <button
               onClick={scrollToContact}
-              className="btn-primary text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-10 py-3 sm:py-4 w-auto"
+              className="btn-primary text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-10 py-3 sm:py-4 w-auto max-w-full"
             >
               Get Free Consultation
             </button>
@@ -77,13 +77,13 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1 }}
-            className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+            className="absolute bottom-8 sm:bottom-10 left-1/2 transform -translate-x-1/2 hidden sm:block"
           >
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
             >
-              <FaArrowDown className="text-white text-3xl" />
+              <FaArrowDown className="text-white text-2xl sm:text-3xl" />
             </motion.div>
           </motion.div>
         </div>

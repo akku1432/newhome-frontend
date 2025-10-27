@@ -47,8 +47,8 @@ const Navbar = () => {
           : 'bg-white shadow-md'
       }`}
     >
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center py-4">
+      <div className="container mx-auto px-4 w-full max-w-full">
+        <div className="flex justify-between items-center py-4 w-full">
           {/* Logo */}
           <a href="#home" onClick={(e) => scrollToSection(e, '#home')}>
             <motion.div
@@ -104,7 +104,8 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-2xl text-navy"
+            className="md:hidden text-3xl text-navy p-2 focus:outline-none hover:text-orange transition-colors"
+            aria-label="Toggle menu"
           >
             {isOpen ? <FaTimes /> : <FaBars />}
           </button>
