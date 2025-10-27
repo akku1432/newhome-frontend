@@ -28,10 +28,12 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Company Info */}
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-orange rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">N</span>
-              </div>
+            <div className="flex items-center space-x-3 mb-4">
+              <img 
+                src="/logo-icon.png" 
+                alt="NUHome Interiors" 
+                className="h-12 w-12 object-contain"
+              />
               <span className="text-white font-bold text-xl">
                 NUHome <span className="text-orange">Interiors</span>
               </span>
