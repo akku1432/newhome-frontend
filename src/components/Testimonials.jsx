@@ -91,12 +91,12 @@ const Testimonials = () => {
               </div>
 
               {/* Rating */}
-              <div className="flex space-x-1 mb-4">
+              <div className="flex space-x-1 mb-6">
                 {renderStars(testimonial.rating)}
               </div>
 
               {/* Review Text */}
-              <p className="text-gray-700 mb-6 leading-relaxed italic">
+              <p className="text-gray-700 mb-6 leading-relaxed italic mt-2">
                 "{testimonial.review}"
               </p>
 
